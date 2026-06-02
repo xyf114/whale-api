@@ -217,18 +217,72 @@ export function SystemInfoSection({ defaultValues }: SystemInfoSectionProps) {
                 )}
               />
 
-              <FormField
-                control={form.control}
-                name='ServerAddress'
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t('Server Address')}</FormLabel>
-                    <FormControl>
-                      <Input placeholder='https://yourdomain.com' {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      {t(
-                        'The public URL of your server, used for OAuth callbacks, webhooks, and other external integrations'
+            <FormField
+              control={form.control}
+              name='SystemName'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('System Name')}</FormLabel>
+                  <FormControl>
+                    <Input placeholder={t('whale API')} {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    {t('The name displayed across the application')}
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name='ServerAddress'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('Server Address')}</FormLabel>
+                  <FormControl>
+                    <Input placeholder='https://yourdomain.com' {...field} />
+                  </FormControl>
+                  <FormDescription>
+                    {t(
+                      'The public URL of your server, used for OAuth callbacks, webhooks, and other external integrations'
+                    )}
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name='Logo'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('Logo URL')}</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder={t('https://example.com/logo.png')}
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormDescription>
+                    {t('URL to your logo image (optional)')}
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name='Footer'
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{t('Footer')}</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder={t(
+                        '© 2025 Your Company. All rights reserved.'
                       )}
                     </FormDescription>
                     <FormMessage />
